@@ -1,4 +1,4 @@
-name: WordPress CI
+name: Next.js CI
 
 on:
   push:
@@ -12,22 +12,20 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Install PHP and Composer
-        uses: shivammathur/setup-php@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          php-version: '7.4' 
+          node-version: '14' 
 
       - name: Install dependencies
-        run: |
-          composer install
-          npm install
-          npm run build
+        run: npm install
 
-      - name: Lint with PHPCS
-        run: vendor/bin/phpcs --standard=WordPress --extensions=php .
+      - name: Lint with ESLint
+        run: npm run lint
 
-      - name: Test with PHPUnit
-        run: vendor/bin/phpunit
+      - name: Run tests
+        run: npm test
+
 
