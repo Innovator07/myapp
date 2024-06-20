@@ -1,0 +1,33 @@
+name: WordPress CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install PHP and Composer
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4' 
+
+      - name: Install dependencies
+        run: |
+          composer install
+          npm install
+          npm run build
+
+      - name: Lint with PHPCS
+        run: vendor/bin/phpcs --standard=WordPress --extensions=php .
+
+      - name: Test with PHPUnit
+        run: vendor/bin/phpunit
+
