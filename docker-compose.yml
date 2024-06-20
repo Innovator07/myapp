@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  go-app:
+    image: shubhjha04578@gmail.com/go-app
+    ports:
+      - "8080:8080"
+
+  nextjs-app:
+    image: shubhjha04578@gmail.com/nextjs-app
+    ports:
+      - "3000:3000"
+
+  wordpress-site:
+    image: shubhjha04578@gmail.com/wordpress-site
+    ports:
+      - "80:80"
