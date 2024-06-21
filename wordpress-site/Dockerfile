@@ -1,27 +1,16 @@
-# Using the official WordPress image as a base here
+# Use an official WordPress image as a parent image
 FROM wordpress:latest
 
-# Installing here necessary PHP extensions
-RUN apt-get update && apt-get install -y \
-    libfreetype6-dev \
-    libjpeg62-turbo-dev \
-    libpng-dev \
-    libzip-dev \
-    zip \
-    unzip \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd zip
+# Set up your custom PHP configuration
+COPY php.ini /usr/local/etc/php/
 
-# Installing WP-CLI for managing WordPress from the command line here
+# Set up WP-CLI
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x wp-cli.phar \
     && mv wp-cli.phar /usr/local/bin/wp
 
-# Adding a custom PHP configuration
-COPY ./php.ini /usr/local/etc/php/
+# Expose port 80 to allow external connections to the web server
+EXPOSE 80
 
-# Installing and activating the Akismet plugin using WP-CLI
-RUN wp plugin install akismet --activate --allow-root
-
-# Setting up a default command to start the WordPress server
+# Start WordPress
 CMD ["apache2-foreground"]
