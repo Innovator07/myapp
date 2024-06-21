@@ -2,16 +2,16 @@ version: '3.8'
 
 services:
   go-app:
-    image: ghcr.io/shubhjha04578/go-app:latest
+    image: go-app:latest
     ports:
-      - "8080:8080"
+      - "5002:5002"
   
   nextjs-app:
-    image: ghcr.io/shubhjha04578/nextjs-app:latest
+    image: nextjs-app:latest
     ports:
       - "3000:3000"
   
   wordpress-site:
-    image: ghcr.io/shubhjha04578/wordpress-site:latest
+    image: wordpress-site:latest
     ports:
       - "80:80"
