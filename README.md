@@ -1,2 +1,0 @@
-# MyApp
-A Demo Application
