@@ -108,4 +108,4 @@ In addition to Dockerization, I have also implemented extended CI/CD pipelines u
 
 
 
-This README includes instructions on setting up and running the applications locally, pushing changes to GitHub, and the GitHub Actions CI/CD workflow configuration. Make sure to adjust any paths, tags, or specific details to match your actual project setup.
+This README includes instructions on setting up and running the applications locally, pushing changes to GitHub, and the GitHub Actions CI/CD workflow configuration. Make sure to adjust any paths, tags, or specific details to match actual project setup.
