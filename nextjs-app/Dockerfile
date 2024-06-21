@@ -30,7 +30,7 @@ RUN npm install --only=prod
 
 # Copy built files from the builder stage
 COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
+COPY --from=builder /app/../public ./public
 
 # Expose port 3000
 EXPOSE 3000
