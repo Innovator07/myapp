@@ -4,7 +4,7 @@ import React from 'react';
 const InvalidPage = () => {
   return (
     <div>
-      <h1>Error: This page does not export a valid React component.</h1>
+      <h3>This page is just a sample invalid react component</h3>
     </div>
   );
 };
