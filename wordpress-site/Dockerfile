@@ -1,10 +1,10 @@
-# Use an official WordPress image as a parent image
+# Using an official WordPress image as a parent image here
 FROM wordpress:latest
 
-# Set up your custom PHP configuration
+# Setting up a custom PHP configuration
 COPY php.ini /usr/local/etc/php/
 
-# Set up WP-CLI
+# Setting up WP-CLI
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x wp-cli.phar \
     && mv wp-cli.phar /usr/local/bin/wp
