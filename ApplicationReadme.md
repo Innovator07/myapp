@@ -12,7 +12,7 @@ Ensure you have the following installed on your local machine:
 - [Git](https://git-scm.com/)
 - [Go](https://golang.org/)
 
-## Repository Structure 
+## Repository Structure and Setup Details for Local Machine
 
 ```plaintext
 myapp/
@@ -32,7 +32,7 @@ myapp/
 ├── docker-compose.yml
 └── README.md
 
-## Steps to Setup and Run Applications on Local Machine:
+# Steps to Setup and Run Applications on Local Machine:
 
 1. Clone the Repository:
 git clone https://github.com/innovator07/MyApp.git
