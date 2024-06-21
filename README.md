@@ -90,7 +90,7 @@ DOCKER_HUB_ACCESS_TOKEN
 These secrets should be saved in the repository settings under the Secrets section.
 
 
--------------------------------------------------------Repository Highlights------------------------------------------------------
+-------------------------------------Repository Highlights------------------------------------------------------
 The repository now contains three Dockerized applications:
 
 go-app
