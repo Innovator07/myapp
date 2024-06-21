@@ -1,16 +1,16 @@
-# Use a Node.js base image as the builder stage
+# Using a Node.js base image as the builder stage here
 FROM node:14 as builder
 
-# Set working directory
+# Setting up working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json (if exists)
+# Copying package.json and package-lock.json (if exists)
 COPY package*.json ./
 
-# Install dependencies
+# Installing dependencies
 RUN npm install
 
-# Copy the rest of the application code
+# Copying the rest of the sample application code
 COPY . .
 
 # Build the Next.js application
@@ -19,7 +19,7 @@ RUN npm run build
 # Production stage
 FROM node:14-slim
 
-# Set working directory
+# Setting working directory
 WORKDIR /app
 
 # Copy package.json and package-lock.json (if exists)
