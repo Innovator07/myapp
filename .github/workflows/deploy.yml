@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1e460fc18f7f2526b31349f25eadeb627fe00ff9
 name: CI/CD Pipeline
 
 on:
